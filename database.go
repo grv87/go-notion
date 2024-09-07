@@ -15,6 +15,7 @@ type Database struct {
 	LastEditedTime time.Time          `json:"last_edited_time"`
 	LastEditedBy   BaseUser           `json:"last_edited_by"`
 	URL            string             `json:"url"`
+	PublicURL      *string            `json:"public_url,omitempty"`
 	Title          []RichText         `json:"title"`
 	Description    []RichText         `json:"description"`
 	Properties     DatabaseProperties `json:"properties"`

@@ -19,6 +19,7 @@ type Page struct {
 	Parent         Parent    `json:"parent"`
 	Archived       bool      `json:"archived"`
 	URL            string    `json:"url"`
+	PublicURL      *string   `json:"public_url,omitempty"`
 	Icon           *Icon     `json:"icon,omitempty"`
 	Cover          *Cover    `json:"cover,omitempty"`
 
