@@ -9,6 +9,7 @@ import (
 // Database is a resource on the Notion platform.
 // See: https://developers.notion.com/reference/database
 type Database struct {
+	Object         string             `json:"object"`
 	ID             string             `json:"id"`
 	CreatedTime    time.Time          `json:"created_time"`
 	CreatedBy      BaseUser           `json:"created_by"`

@@ -21,6 +21,7 @@ type Block interface {
 	LastEditedTime() time.Time
 	HasChildren() bool
 	Archived() bool
+	BlockType() BlockType
 	json.Marshaler
 }
 
@@ -79,6 +80,7 @@ type baseBlock struct {
 	lastEditedBy   BaseUser
 	hasChildren    bool
 	archived       bool
+	blockType      BlockType
 }
 
 // ID returns the identifier (UUIDv4) for the block.
@@ -112,6 +114,10 @@ func (b baseBlock) Archived() bool {
 
 func (b baseBlock) Parent() Parent {
 	return b.parent
+}
+
+func (b baseBlock) BlockType() BlockType {
+	return b.blockType
 }
 
 type ParagraphBlock struct {
@@ -946,6 +952,8 @@ func (dto blockDTO) Block() (Block, error) {
 	if dto.Archived != nil {
 		baseBlock.archived = *dto.Archived
 	}
+
+	baseBlock.blockType = dto.Type
 
 	switch dto.Type {
 	case BlockTypeParagraph:

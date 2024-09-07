@@ -11,6 +11,7 @@ import (
 // another page, or a database.
 // See: https://developers.notion.com/reference/page
 type Page struct {
+	Object         string    `json:"object"`
 	ID             string    `json:"id"`
 	CreatedTime    time.Time `json:"created_time"`
 	CreatedBy      *BaseUser `json:"created_by,omitempty"`
