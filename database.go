@@ -156,6 +156,7 @@ type DatabaseProperty struct {
 	CreatedBy      *EmptyMetadata `json:"created_by,omitempty"`
 	LastEditedTime *EmptyMetadata `json:"last_edited_time,omitempty"`
 	LastEditedBy   *EmptyMetadata `json:"last_edited_by,omitempty"`
+	Button         *EmptyMetadata `json:"button,omitempty"`
 
 	Number      *NumberMetadata   `json:"number,omitempty"`
 	Select      *SelectMetadata   `json:"select,omitempty"`
@@ -372,6 +373,7 @@ const (
 	DBPropTypeCreatedBy      DatabasePropertyType = "created_by"
 	DBPropTypeLastEditedTime DatabasePropertyType = "last_edited_time"
 	DBPropTypeLastEditedBy   DatabasePropertyType = "last_edited_by"
+	DBPropTypeButton         DatabasePropertyType = "button"
 
 	// Used for paginated property values.
 	// See: https://developers.notion.com/reference/property-item-object#paginated-property-values
